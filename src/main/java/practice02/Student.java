@@ -1,6 +1,6 @@
 package practice02;
 
-import practice01.Person;
+//import practice02.Person;
 
 public class Student extends Person {
     public int klass;
