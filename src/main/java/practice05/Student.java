@@ -1,7 +1,5 @@
 package practice05;
 
-import practice03.Person;
-
 public class Student extends Person {
     public int klass;
     public Student(String name, int age, int klass){
