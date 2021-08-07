@@ -49,7 +49,8 @@ public class Teacher extends Person {
     public String introduceWith(Student student){
         String introduction = super.introduce() + " I am a Teacher.";
         Klass studentClass = student.getKlass();
-        if(klasses.contains(studentClass)||klass==studentClass)
+
+        if(isTeaching(student))
             return String.format("%s I teach %s.",introduction,student.getName());
         else
             return String.format("%s I don't teach %s.",introduction,student.getName());
@@ -59,11 +60,16 @@ public class Teacher extends Person {
         return klasses;
     }
 
-    public boolean isTeaching(Student jerry) {
-        if (klasses.contains(jerry.getKlass())){
-            return true;
+    public boolean isTeaching(Student student) {
+        List<Klass> theseKlasses = klasses
+                .stream()
+                .filter(klass -> klass.getNumber() == student.getKlass().getNumber())
+                .collect(Collectors.toList());
+
+        if (theseKlasses.isEmpty()){
+            return false;
         }
         else
-            return false;
+            return true;
     }
 }
