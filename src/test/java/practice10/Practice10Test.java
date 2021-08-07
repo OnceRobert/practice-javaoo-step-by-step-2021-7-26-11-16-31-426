@@ -66,7 +66,7 @@ public class Practice10Test {
 
     @Test
     public void should_class_assign_a_member_student_as_leader() throws Exception {
-        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
+        Student jerry = new Student(1, "Jerry", 8, klass);
         klass.appendMember(jerry);
         klass.assignLeader(jerry);
         assertThat(klass.getLeader()).isEqualTo(jerry);

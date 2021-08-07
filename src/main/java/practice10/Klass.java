@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Klass {
     private int klass;
-    private Student leader;
+    private Student leader = null;
     private List<Integer> Students = new ArrayList<Integer>();
     private Teacher teacher = null;
     public Klass(int klass){
@@ -34,7 +34,8 @@ public class Klass {
     }
 
     public void appendMember(Student newStudent){
-        System.out.print(String.format("I am %s. I know %s has joined Class %d.\n",teacher.getName(),newStudent.getName(),newStudent.getKlass().getNumber()));
+        if (teacher!=null)
+            System.out.print(String.format("I am %s. I know %s has joined Class %d.\n",teacher.getName(),newStudent.getName(),newStudent.getKlass().getNumber()));
         Students.add(newStudent.getID());
     }
 
