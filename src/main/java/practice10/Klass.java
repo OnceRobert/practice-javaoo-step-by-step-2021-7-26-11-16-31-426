@@ -21,6 +21,8 @@ public class Klass {
 
     public void assignLeader(Student leader) {
         if(Students.contains(leader.getID())) {
+            if (teacher!=null)
+                System.out.print(String.format("I am %s. I know %s become Leader of Class %d.\n",teacher.getName(),leader.getName(),leader.getKlass().getNumber()));
             this.leader = leader;
         }
         else {

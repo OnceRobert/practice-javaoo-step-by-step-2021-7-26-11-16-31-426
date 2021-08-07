@@ -179,7 +179,7 @@ public class Practice10Test {
         LinkedList<Klass> linkedList = new LinkedList<Klass>();
         linkedList.add(klass);
         Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
+        Student jerry = new Student(1, "Jerry", 8, klass);
 
         klass.appendMember(jerry);
         klass.assignLeader(jerry);
