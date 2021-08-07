@@ -16,6 +16,7 @@ public class Teacher extends Person {
     public Teacher(int ID, String name, int age){
         super(ID,name,age);
         klass = null;
+        klasses = null;
     }
 
     public Teacher(int id, String tom, int age, LinkedList<Klass> linkedList) {
@@ -34,7 +35,7 @@ public class Teacher extends Person {
     }
 
     public String introduce(){
-        if(klasses==null)   // .empty()
+        if(klasses==null&&klass==null)   // .empty()
             return super.introduce() + " I am a Teacher. I teach No Class.";
         else {
             String klassesTeach = String.format("%d", klasses.get(0).getNumber());
