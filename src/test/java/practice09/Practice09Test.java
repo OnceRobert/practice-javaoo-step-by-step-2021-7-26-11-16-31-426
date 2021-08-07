@@ -145,10 +145,11 @@ public class Practice09Test {
 
     @Test       //!!!!
     public void should_teacher_introduce_a_student_it_teaches() throws Exception {
-        LinkedList<Klass> linkedList = new LinkedList<Klass>();
-        linkedList.add(new Klass(1));
+        LinkedList<Klass> linkedList = new LinkedList<>();
+        Klass klass1 = new Klass(1);
+        linkedList.add(klass1);
         Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-        Student jerry = new Student(1, "Jerry", 8, new Klass(1));
+        Student jerry = new Student(1, "Jerry", 8, klass1);
         assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry.");
     }
 
