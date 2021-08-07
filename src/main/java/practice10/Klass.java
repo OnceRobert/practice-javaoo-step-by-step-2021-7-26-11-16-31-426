@@ -7,6 +7,7 @@ public class Klass {
     private int klass;
     private Student leader;
     private List<Integer> Students = new ArrayList<Integer>();
+    private Teacher teacher = null;
     public Klass(int klass){
         this.klass = klass;
 
@@ -33,8 +34,16 @@ public class Klass {
     }
 
     public void appendMember(Student newStudent){
-
+        System.out.print(String.format("I am %s. I know %s has joined Class %d.\n",teacher.getName(),newStudent.getName(),newStudent.getKlass().getNumber()));
         Students.add(newStudent.getID());
+    }
+
+    public Teacher getTeacher(){
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher){
+        this.teacher = teacher;
     }
 
 }

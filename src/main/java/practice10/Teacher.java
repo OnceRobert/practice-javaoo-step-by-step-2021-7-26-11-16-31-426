@@ -10,8 +10,10 @@ public class Teacher extends Person {
     public List<Klass> klasses = new ArrayList<>();
     public Teacher(int ID, String name, int age, Klass klass){
         super(ID,name,age);
+        klass.setTeacher(this);
         this.klass = klass;
         klasses.add(klass);
+
     }
 
     public Teacher(int ID, String name, int age){
@@ -23,6 +25,9 @@ public class Teacher extends Person {
     public Teacher(int id, String tom, int age, LinkedList<Klass> linkedList) {
         super(id, tom,age);
         klasses = linkedList;
+        for(Klass teachingKlasses : klasses){
+            teachingKlasses.setTeacher(this);
+        }
 
     }
 
