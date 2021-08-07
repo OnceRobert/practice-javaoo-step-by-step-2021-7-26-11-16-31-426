@@ -46,12 +46,12 @@ public class Teacher extends Person {
     }
 
     public String introduceWith(Student student){
-        String introduction = super.introduce();
-        int studentClass = student.getKlass().getNumber();
-        if(klasses.contains(studentClass))
-            return String.format("%s I am a Teacher. I teach %s.",introduction,student.getName());
+        String introduction = super.introduce() + " I am a Teacher.";
+        Klass studentClass = student.getKlass();
+        if(klasses.contains(studentClass)||klass==studentClass)
+            return String.format("%s I teach %s.",introduction,student.getName());
         else
-            return String.format("%s I am a Teacher. I don't teach %s.",introduction,student.getName());
+            return String.format("%s I don't teach %s.",introduction,student.getName());
     }
 
     public List<Klass> getClasses() {
