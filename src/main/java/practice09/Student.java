@@ -8,7 +8,7 @@ public class Student extends Person{
     }
 
     public String introduce(){
-        if (klass.getLeader() == this.getKlass().getLeader())
+        if (klass.getLeader()!=null&&this.klass.getLeader()==this)
             return super.introduce() + " I am a Student. I am Leader of Class " + klass.getNumber() + ".";
         else
             return super.introduce() + " I am a Student. I am at Class " + klass.getNumber() + ".";

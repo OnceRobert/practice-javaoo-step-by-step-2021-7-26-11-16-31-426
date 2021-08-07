@@ -6,7 +6,7 @@ import java.util.List;
 public class Klass {
     private int klass;
     private Student leader;
-    private List<Integer> Students = new ArrayList<Integer>();
+    private List<Student> Students = new ArrayList<>();
     public Klass(int klass){
         this.klass = klass;
 
@@ -19,13 +19,12 @@ public class Klass {
     }
 
     public void assignLeader(Student leader) {
-        if(Students.contains(leader.getID())) {
+        if(Students.contains(leader)) {
             this.leader = leader;
+            return;
         }
-        else {
             System.out.print("It is not one of us.\n");
-            //System.out.print("It is not one of us.\n");
-        }
+
     }
 
     public Student getLeader() {
@@ -33,7 +32,7 @@ public class Klass {
     }
 
     public void appendMember(Student newStudent){
-        Students.add(newStudent.getID());
+        Students.add(newStudent);
     }
 
 }

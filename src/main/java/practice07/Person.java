@@ -3,7 +3,7 @@ package practice07;
 import java.util.Objects;
 
 public class Person {
-    public int ID;
+    public int ID;  //Variable names
     public String name;
     public int age;
     public Person(int ID, String name, int age) {
@@ -27,7 +27,7 @@ public class Person {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;      //use instanceOf
         Person person = (Person) o;
         return ID == person.ID && age == person.age && Objects.equals(name, person.name);
     }

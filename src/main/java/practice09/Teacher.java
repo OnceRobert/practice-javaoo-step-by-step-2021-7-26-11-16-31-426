@@ -3,6 +3,7 @@ package practice09;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person {
     public Klass klass;
@@ -33,23 +34,24 @@ public class Teacher extends Person {
     }
 
     public String introduce(){
-        if(klasses==null)
+        if(klasses==null)   // .empty()
             return super.introduce() + " I am a Teacher. I teach No Class.";
         else {
             String klassesTeach = String.format("%d", klasses.get(0).getNumber());
             for(int i = 1; i<klasses.size();i++){
                 klassesTeach += ", " + klasses.get(i).getNumber();
-            }
+            }   //Java stream
             return super.introduce() + " I am a Teacher. I teach Class " + klassesTeach + ".";
         }
     }
 
     public String introduceWith(Student student){
         String introduction = super.introduce();
-        if(student.getKlass()==this.klass)
-            return String.format("%s I am a Teacher. I teach %s",introduction,student.getName());
+        int studentClass = student.getKlass().getNumber();
+        if(klasses.contains(studentClass))
+            return String.format("%s I am a Teacher. I teach %s.",introduction,student.getName());
         else
-            return String.format("%s I am a Teacher. I don't teach %s",introduction,student.getName());
+            return String.format("%s I am a Teacher. I don't teach %s.",introduction,student.getName());
     }
 
     public List<Klass> getClasses() {

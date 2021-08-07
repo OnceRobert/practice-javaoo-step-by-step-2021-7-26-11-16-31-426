@@ -80,7 +80,7 @@ public class Practice09Test {
         assertThat(tom.getKlass()).isEqualTo(klass);
     }
 
-    @Test
+    @Test   //!!!
     public void should_student_introduce_with_class() throws Exception {
         Student tom = new Student(1, "Tom", 21, klass);
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
@@ -115,7 +115,7 @@ public class Practice09Test {
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2, 3.");
     }
 
-    @Test
+    @Test       //!!!!
     public void should_teacher_introduce_itself_with_no_class_teaching() throws Exception {
         Teacher tom = new Teacher(1, "Tom", 21);
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach No Class.");
@@ -143,7 +143,7 @@ public class Practice09Test {
         assertThat(tom.isTeaching(jerry)).isFalse();
     }
 
-    @Test
+    @Test       //!!!!
     public void should_teacher_introduce_a_student_it_teaches() throws Exception {
         LinkedList<Klass> linkedList = new LinkedList<Klass>();
         linkedList.add(new Klass(1));

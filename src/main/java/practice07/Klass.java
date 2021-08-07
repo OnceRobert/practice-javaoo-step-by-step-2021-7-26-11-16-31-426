@@ -2,7 +2,7 @@ package practice07;
 
 public class Klass {
     private int klass;
-    private String Leader;
+    private String Leader;//use Student
     public Klass(int klass){
         this.klass = klass;
     }
