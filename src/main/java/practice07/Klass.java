@@ -2,7 +2,7 @@ package practice07;
 
 public class Klass {
     private int klass;
-    private String Leader;//use Student
+    private Student Leader;//use Student
     public Klass(int klass){
         this.klass = klass;
     }
@@ -14,10 +14,10 @@ public class Klass {
     }
 
     public void assignLeader(Student Leader) {
-        this.Leader = Leader.getName();
+        this.Leader = Leader;
     }
 
-    public String getLeader() {
+    public Student getLeader() {
         return Leader;
     }
 }

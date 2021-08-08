@@ -8,7 +8,11 @@ public class Student extends Person {
     }
 
     public String introduce(){
-        return super.introduce() + " I am a Student. I am at Class " + klass.getNumber() + ".";
+        String introduction = super.introduce() + " I am a Student. ";
+        if(this.klass.getLeader()==this)
+            return introduction + "I am Leader of Class " + klass.getNumber()+".";
+        else
+            return introduction + "I am at Class " + klass.getNumber() + ".";
     }
 
     public Klass getKlass() {

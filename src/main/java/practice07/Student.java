@@ -2,21 +2,21 @@ package practice07;
 
 
 public class Student extends Person {
-    private int klass;
+    private Klass klass;
     public Student(int ID, String name, int age, Klass klass){
         super(ID, name,age);
-        this.klass = klass.getNumber();
+        this.klass = klass;
     }
 
     public String introduce(){
-        return super.introduce() + " I am a Student. I am at Class " + klass + ".";
+        String introduction = super.introduce() + " I am a Student. ";
+        if(this.klass.getLeader()==this)
+            return introduction + "I am Leader of Class " + klass.getNumber()+".";
+        else
+            return introduction + "I am at Class " + klass.getNumber() + ".";
     }
 
-    public int getKlass() {
+    public Klass getKlass() {
         return klass;
-    }
-
-    public void setKlass(int klass) {
-        this.klass = klass;
     }
 }

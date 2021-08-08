@@ -26,14 +26,14 @@ public class Teacher extends Person {
         if(klass==null)
             return super.introduce() + " I am a Teacher. I teach No Class.";
         else
-            return super.introduce() + " I am a Teacher. I teach class "+klass+".";
+            return super.introduce() + " I am a Teacher. I teach Class "+klass.getNumber()+".";
     }
 
     public String introduceWith(Student student){
-        String introduction = super.introduce();
-        if(student.getKlass()==this.klass)
-            return String.format("%s I am a Teacher. I teach %s",introduction,student.getName());
+        String introduction = super.introduce() + " I am a Teacher.";
+        if(student.getKlass().getNumber()==this.klass.getNumber())
+            return String.format("%s I teach %s.",introduction,student.getName());
         else
-            return String.format("%s I am a Teacher. I don't teach %s",introduction,student.getName());
+            return String.format("%s I don't teach %s.",introduction,student.getName());
     }
 }

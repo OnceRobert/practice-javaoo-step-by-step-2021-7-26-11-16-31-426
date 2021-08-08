@@ -36,6 +36,7 @@ public class Klass {
     }
 
     public void appendMember(Student newStudent){
+        newStudent.setKlass(this);
         if (teacher!=null)
             System.out.print(String.format("I am %s. I know %s has joined Class %d.\n",teacher.getName(),newStudent.getName(),newStudent.getKlass().getNumber()));
         Students.add(newStudent.getID());

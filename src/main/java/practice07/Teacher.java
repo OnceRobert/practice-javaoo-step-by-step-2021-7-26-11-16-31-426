@@ -2,39 +2,35 @@ package practice07;
 
 
 public class Teacher extends Person {
-    public int klass;
+    public Klass klass;
     public Teacher(int ID, String name, int age, Klass klass){
         super(ID,name,age);
-        this.klass = klass.getNumber();
+        this.klass = klass;
     }
 
     public Teacher(int ID, String name, int age){
         super(ID,name,age);
-        klass = 0;
+        klass = null;
     }
 
 
 
-    public int getKlass() {
+    public Klass getKlass() {
         return klass;
     }
 
-    public void setKlass(int klass) {
-        this.klass = klass;
-    }
-
     public String introduce(){
-        if(klass==0)
+        if(klass==null)
             return super.introduce() + " I am a Teacher. I teach No Class.";
         else
-            return super.introduce() + " I am a Teacher. I teach class "+klass+".";
+            return super.introduce() + " I am a Teacher. I teach Class "+klass.getNumber()+".";
     }
 
     public String introduceWith(Student student){
         String introduction = super.introduce();
-        if(student.getKlass()==this.klass)
-            return String.format("%s I am a Teacher. I teach %s",introduction,student.getName());
+        if(student.getKlass().getNumber()==this.klass.getNumber())
+            return String.format("%s I am a Teacher. I teach %s.",introduction,student.getName());
         else
-            return String.format("%s I am a Teacher. I don't teach %s",introduction,student.getName());
+            return String.format("%s I am a Teacher. I don't teach %s.",introduction,student.getName());
     }
 }

@@ -66,7 +66,7 @@ public class Practice10Test {
 
     @Test
     public void should_class_assign_a_member_student_as_leader() throws Exception {
-        Student jerry = new Student(1, "Jerry", 8, klass);
+        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
         klass.appendMember(jerry);
         klass.assignLeader(jerry);
         assertThat(klass.getLeader()).isEqualTo(jerry);
@@ -167,7 +167,7 @@ public class Practice10Test {
         LinkedList<Klass> linkedList = new LinkedList<Klass>();
         linkedList.add(klass);
         Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-        Student jerry = new Student(1, "Jerry", 8, klass);
+        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
 
         klass.appendMember(jerry);
 
@@ -179,7 +179,7 @@ public class Practice10Test {
         LinkedList<Klass> linkedList = new LinkedList<Klass>();
         linkedList.add(klass);
         Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-        Student jerry = new Student(1, "Jerry", 8, klass);
+        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
 
         klass.appendMember(jerry);
         klass.assignLeader(jerry);
